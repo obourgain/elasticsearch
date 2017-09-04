@@ -200,6 +200,7 @@ public class TransportClientNodesService extends AbstractComponent {
                     listNodesBuilder.add(otherNode);
                 } else {
                     logger.debug("removing address [{}] from listed nodes", otherNode);
+                    transportService.disconnectFromNode(otherNode);
                 }
             }
             listedNodes = Collections.unmodifiableList(listNodesBuilder);
